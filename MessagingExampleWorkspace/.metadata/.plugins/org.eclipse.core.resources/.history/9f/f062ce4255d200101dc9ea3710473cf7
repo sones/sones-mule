@@ -1,0 +1,57 @@
+package de.sones.mule.demo.transformers;
+
+import java.io.ByteArrayInputStream;
+import java.io.InputStream;
+import java.net.URI;
+
+import org.apache.commons.httpclient.HttpMethod;
+import org.apache.commons.httpclient.methods.PostMethod;
+import org.mule.api.MuleMessage;
+import org.mule.api.config.MuleProperties;
+import org.mule.api.transformer.TransformerException;
+import org.mule.transformer.AbstractMessageTransformer;
+
+public class GQLToHttpRequestTransformer extends AbstractMessageTransformer {
+
+	@Override
+	public Object transformMessage(MuleMessage message, String arg1)
+			throws TransformerException {
+
+		try {
+		
+		  HttpMethod result;
+		
+		  //Get the contents of the previous message
+		  Object src = message.getPayload();
+		
+		  //Get the endpoint which is configured
+		  String endpoint = message.getOutboundProperty(MuleProperties.MULE_ENDPOINT_PROPERTY, null);
+		  
+		  //Create an uri
+		  URI uri = null;
+		  
+			  
+			  uri = new URI(endpoint);
+		  
+		
+		  PostMethod postMethod = new PostMethod(uri.toString());
+		 
+		  InputStream is = new ByteArrayInputStream(src.toString().getBytes("UTF-8"));
+		  
+		  postMethod.setRequestBody(src.toString()); 
+		
+		  result = postMethod;
+		  
+		  return result;
+		  
+		}
+		catch (Exception e)
+		{
+			 throw new TransformerException(this, e);
+		}
+		  
+	}
+
+	
+	
+}

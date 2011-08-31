@@ -1,0 +1,22 @@
+package de.sones.mule.demo;
+
+import java.net.URL;
+import java.util.ArrayList;
+
+import sun.net.www.protocol.http.HttpURLConnection;
+
+public class MessageListBean {
+
+	private ArrayList<MessageBean> messages; 
+	
+	
+	public ArrayList<MessageBean> getMessages() {
+	
+		System.out.println("Retrieving messages ...");
+		
+		//TODO
+		
+		return messages;
+	}
+	
+}

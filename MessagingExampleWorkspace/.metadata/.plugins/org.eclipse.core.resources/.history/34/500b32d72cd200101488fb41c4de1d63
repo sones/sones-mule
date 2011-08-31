@@ -1,0 +1,12 @@
+package de.sones.mule.demo.logger;
+
+public class LoggingComponent {
+
+	String logMessage(String msg)
+	{
+		System.out.println(msg);
+		
+		return msg;
+	}
+	
+}

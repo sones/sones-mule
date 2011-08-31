@@ -1,0 +1,91 @@
+package de.sones.mule.demo;
+
+import java.io.OutputStreamWriter;
+import java.net.URL;
+import java.net.URLConnection;
+import java.net.URLEncoder;
+import java.util.Date;
+
+import sun.net.www.protocol.http.HttpURLConnection;
+
+
+public class MessageBean {
+
+	private Date date;
+	private String userName;
+	private String message;
+	
+	
+	/*
+	 * Date
+	 */
+	public Date getDate() {
+		return date;
+	}
+	
+	public void setDate(Date date) {
+		this.date = date;
+	}
+	
+	/*
+	 * User name
+	 */
+	public String getUserName() {
+		return userName;
+	}
+	
+	public void setUserName(String userName) {
+		this.userName = userName;
+	}
+	
+	
+	/*
+	 * Message
+	 */
+	public String getMessage() {
+		return message;
+	}
+	
+	public void setMessage(String message) {
+		
+		this.date = new Date();
+		this.message = message;
+	}
+	
+	/*
+	 * Program logic
+	 */
+	public String sendMessage()
+	{
+		System.out.println("Sending message ...");
+		
+		try
+		{
+	
+
+		    String data = "date=" + URLEncoder.encode("" + this.date.getTime()) +
+		                  "&userName=" + URLEncoder.encode(this.userName) + 
+		                  "&message=" + URLEncoder.encode(this.message);
+
+			
+			HttpURLConnection con = (HttpURLConnection) new URL("http://localhost:8888/services/messenger").openConnection();
+			con.setDoOutput(true);
+			con.setDoInput(true);
+				
+			OutputStreamWriter out = new OutputStreamWriter(con.getOutputStream());
+			out.write(data);
+			out.flush();
+			
+			out.close();
+			con.disconnect();
+
+			return "";
+			
+		}
+		catch (Exception e)
+		{
+			return e.getMessage();
+		}
+			
+	}	
+}

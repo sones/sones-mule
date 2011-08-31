@@ -1,0 +1,19 @@
+package de.sones.mule.demo.transformers;
+
+import org.mule.api.transformer.TransformerException;
+import org.mule.transformer.AbstractTransformer;
+
+public class HttpRequestToXMLTransformer extends AbstractTransformer {
+
+	
+	@Override
+	protected Object doTransform(Object arg0, String arg1)
+			throws TransformerException {
+	
+		
+		
+		
+		return null;
+	}
+
+}

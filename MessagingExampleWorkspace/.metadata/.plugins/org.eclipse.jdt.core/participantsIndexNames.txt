@@ -1,0 +1,5 @@
+INDEX VERSION 1.126
+/home/david/git/customer-projects/sones-customers/201108_Mule/MessagingExampleWorkspace/.metadata/.plugins/org.eclipse.jst.jsp.core/jspsearch/967285022.index
+/MessengerWebApp
+/home/david/git/customer-projects/sones-customers/201108_Mule/MessagingExampleWorkspace/.metadata/.plugins/org.eclipse.jst.jsp.core/jspsearch/3116319881.index
+/MessengerWebApp

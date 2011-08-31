@@ -1,0 +1,6 @@
+package de.sones.mule.demo;
+
+public interface Settings {
+
+	
+}

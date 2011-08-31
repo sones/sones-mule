@@ -1,0 +1,6 @@
+INDEX VERSION 1.122+/home/david/git/customer-projects/sones-customers/201108_Mule/MessagingExampleWorkspace/.metadata/.plugins/org.eclipse.wst.jsdt.core/indexes
+2139736402.index
+4115161511.index
+1251867114.index
+4265463102.index
+1369296213.index

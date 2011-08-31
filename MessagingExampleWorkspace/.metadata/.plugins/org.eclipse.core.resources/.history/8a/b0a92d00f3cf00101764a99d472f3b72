@@ -1,0 +1,57 @@
+package de.sones.mule.demo;
+
+import java.util.Date;
+
+
+public class MessageBean {
+
+	private Date date;
+	private String userName;
+	private String message;
+	
+	
+	/*
+	 * Date
+	 */
+	public Date getDate() {
+		return date;
+	}
+	
+	public void setDate(Date date) {
+		this.date = date;
+	}
+	
+	/*
+	 * User name
+	 */
+	public String getUserName() {
+		return userName;
+	}
+	
+	public void setUserName(String userName) {
+		this.userName = userName;
+	}
+	
+	
+	/*
+	 * Message
+	 */
+	public String getMessage() {
+		return message;
+	}
+	
+	public void setMessage(String message) {
+		
+		this.date = new Date();
+		this.message = message;
+	}
+	
+	/*
+	 * Program logic
+	 */
+	public String sendMessage()
+	{
+		System.out.println("Sending message ...");
+		return "";
+	}	
+}

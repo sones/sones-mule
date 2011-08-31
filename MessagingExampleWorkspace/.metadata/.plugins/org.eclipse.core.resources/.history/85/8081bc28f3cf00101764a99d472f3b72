@@ -1,0 +1,17 @@
+package de.sones.mule.demo;
+
+import java.util.ArrayList;
+
+public class MessageListBean {
+
+	private ArrayList<MessageBean> messages; 
+	
+	
+	public ArrayList<MessageBean> getMessages() {
+	
+		//Connect the service to get all messages
+		
+		return messages;
+	}
+	
+}

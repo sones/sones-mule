@@ -1,0 +1,36 @@
+package de.sones.mule.demo;
+
+
+import java.util.ArrayList;
+import de.sones.GraphDBClient.GraphDBClient;
+
+public class MessageListBean {
+
+	
+	private ArrayList<MessageBean> messages; 
+	
+	
+	
+	public ArrayList<MessageBean> getMessages() {
+	
+		System.out.println("Retrieving messages ...");
+		
+		try
+		{
+		
+			GraphDBClient client = new GraphDBClient("localhost", "test", "test", 9975);
+		
+			//date, userName, message
+			client.Query("FROM messages SELECT date, userName, message");
+		
+		
+		}
+		catch (Exception e)
+		{
+			System.out.println(e.getMessage());
+		}
+		
+		return this.messages;
+	}
+	
+}

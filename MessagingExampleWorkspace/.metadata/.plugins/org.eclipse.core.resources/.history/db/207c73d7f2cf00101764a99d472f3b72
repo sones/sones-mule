@@ -1,0 +1,16 @@
+package de.sones.mule.demo;
+
+import java.util.ArrayList;
+
+public class MessageListBean {
+
+	private ArrayList<MessageBean> messages; 
+	
+	
+	public ArrayList<MessageBean> getMessages() {
+		return messages;
+	}
+	
+	
+	
+}

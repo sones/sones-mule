@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename type &apos;de.sones.mule.demo.transformers.HashMapToGQLTransformer&apos; to &apos;PropsToGQLTransformer&apos;&#x0A;- Original project: &apos;MessageTransformer&apos;&#x0A;- Original element: &apos;de.sones.mule.demo.transformers.HashMapToGQLTransformer&apos;&#x0A;- Renamed element: &apos;de.sones.mule.demo.transformers.PropsToGQLTransformer&apos;&#x0A;- Update references to refactored element&#x0A;- Update textual occurrences in comments and strings" description="Rename type &apos;HashMapToGQLTransformer&apos;" flags="589830" id="org.eclipse.jdt.ui.rename.type" input="/src&lt;de.sones.mule.demo.transformers{HashMapToGQLTransformer.java[HashMapToGQLTransformer" matchStrategy="1" name="PropsToGQLTransformer" qualified="false" references="true" similarDeclarations="false" stamp="1314624051755" textual="false" version="1.0"/>
+</session>

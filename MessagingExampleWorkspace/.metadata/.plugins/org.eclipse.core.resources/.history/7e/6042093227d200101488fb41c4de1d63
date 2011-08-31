@@ -1,0 +1,54 @@
+package de.sones.mule.demo.transformers;
+
+import org.mule.api.transformer.TransformerException;
+import org.mule.transformer.AbstractTransformer;
+
+public class HttpRequestToXMLTransformer extends AbstractTransformer {
+
+	
+	@Override
+	protected Object doTransform(Object src, String encoding)
+			throws TransformerException {
+	
+		
+		if (src instanceof byte[])
+        {
+            if (encoding != null)
+            {
+                try
+                {
+                    srcAsString = new String((byte[])src, encoding);
+                }
+                catch (UnsupportedEncodingException ex)
+                {
+                    srcAsString = new String((byte[])src);
+                }
+            }
+            else
+            {
+                srcAsString = new String((byte[])src);
+            }
+        }
+        else if (src instanceof InputStream)
+        {
+            InputStream input = (InputStream) src;
+            try
+            {
+                srcAsString = IOUtils.toString(input);
+            }
+            finally
+            {
+                IOUtils.closeQuietly(input);
+            }
+        }
+        else
+        {
+            srcAsString = src.toString();
+        }
+
+        return srcAsString;
+		
+		return null;
+	}
+
+}
